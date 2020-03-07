@@ -1,0 +1,57 @@
+<main>
+  <section class="form">
+    <form [formGroup]="playlistForm" class="playlist-form">
+      <mat-card class="playlist-form__card">
+        <mat-form-field appearance="fill">
+          <mat-label>Playlist Name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+        <!-- Songs Form Array -->
+        <div formArrayName="albums" class="albums">
+          <fieldset *ngFor="let album of albums.controls; let i=index" class="albums__item" [formGroupName]="i">
+            <mat-form-field appearance="fill">
+              <mat-label>Album Name</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Artist Name</mat-label>
+              <input matInput formControlName="artist">
+            </mat-form-field>
+            <fieldset class="songs" formArrayName="songs">
+              <div class="songs__item" *ngFor="let song of getSongControls(i);let j=index" [formGroupName]="j">
+                <mat-form-field appearance="fill">
+                  <mat-label>Song Name</mat-label>
+                  <input matInput formControlName="name">
+                </mat-form-field>
+                <button mat-icon-button class="song-remove-btn" (click)="removeSong(i,j)" color="warn">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+              <button mat-stroked-button (click)="addSong(i)" color="primary">
+                <mat-icon>add</mat-icon>
+              </button>
+            </fieldset>
+            <button mat-icon-button class="albums__remove" (click)="removeAlbum(i)" color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+
+          </fieldset>
+          <button mat-stroked-button (click)="addAlbum()" color="primary">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+        <button mat-flat-button type="submit" class="submit-btn" color="primary">Submit</button>
+      </mat-card>
+    </form>
+  </section>
+
+  <section class="form-value">
+    <mat-card>
+      <h4 style="margin: 0;">
+        Form Value
+      </h4>
+      <pre><code #formValue class="language-json">
+      </code></pre>
+    </mat-card>
+  </section>
+</main>

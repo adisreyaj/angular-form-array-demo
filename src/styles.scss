@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f3f3f3;
+  font-family: "Open Sans", sans-serif;
+}
+
+.box-layout {
+  max-width: 1440px;
+  width: 95%;
+  margin: 32px auto;
+}

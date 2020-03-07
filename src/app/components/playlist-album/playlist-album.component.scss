@@ -1,0 +1,73 @@
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #fff;
+}
+
+main {
+  display: flex;
+  justify-content: start;
+  flex-flow: row wrap;
+  align-items: stretch;
+  .form,
+  .form-value {
+    width: 50%;
+    min-width: 500px;
+  }
+}
+.playlist-form {
+  max-width: 500px;
+  margin: 0 auto;
+  &__card {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+  }
+  .submit-btn {
+    margin-top: 32px;
+    width: 200px;
+    margin: 0 auto;
+  }
+}
+
+.albums {
+  position: relative;
+  &__item {
+    display: flex;
+    flex-flow: column;
+    padding: 16px;
+    margin: 8px 0;
+    border: none;
+    background-color: rgba($color: #3f51b5, $alpha: 0.2);
+    border-radius: 4px;
+  }
+}
+
+.songs {
+  background-color: #f1f1f1;
+  padding: 16px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  &__item {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    mat-form-field {
+      margin: auto;
+      width: 100%;
+    }
+  }
+  .song-remove-btn {
+    margin-bottom: 20px;
+  }
+}
+.song__field {
+  input {
+    margin-right: 8px;
+  }
+}
+
+label {
+  font-weight: 600;
+}
