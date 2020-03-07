@@ -45,21 +45,18 @@ main {
   background-color: #f1f1f1;
   padding: 16px;
   margin: 8px 0;
-  border: none;
-  border-radius: 4px;
   &__item {
-    display: flex;
-    flex-flow: row;
+    border: none;
+    flex-flow: row nowrap;
+    padding: 0;
     align-items: center;
     justify-content: space-between;
+    display: flex;
+    border: none;
+    border-radius: 4px;
     margin-bottom: 8px;
-    mat-form-field {
-      margin: auto;
-      width: 100%;
-    }
   }
   .song-remove-btn {
-    margin-bottom: 20px;
   }
 }
 .song__field {

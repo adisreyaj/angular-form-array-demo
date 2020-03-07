@@ -6,8 +6,8 @@
           <mat-label>Playlist Name</mat-label>
           <input matInput formControlName="name">
         </mat-form-field>
-        <!-- Songs Form Array -->
         <div formArrayName="albums" class="albums">
+          <!-- Albums Form Array ----------------------------------->
           <fieldset *ngFor="let album of albums.controls; let i=index" class="albums__item" [formGroupName]="i">
             <mat-form-field appearance="fill">
               <mat-label>Album Name</mat-label>
@@ -17,25 +17,27 @@
               <mat-label>Artist Name</mat-label>
               <input matInput formControlName="artist">
             </mat-form-field>
-            <fieldset class="songs" formArrayName="songs">
-              <div class="songs__item" *ngFor="let song of getSongControls(i);let j=index" [formGroupName]="j">
+            <!-- Songs Form Array ----------------------------------->
+            <div class="songs" formArrayName="songs">
+              <fieldset class="songs__item" *ngFor="let song of getSongControls(i);let j=index" [formGroupName]="j">
                 <mat-form-field appearance="fill">
                   <mat-label>Song Name</mat-label>
                   <input matInput formControlName="name">
+                  <button matSuffix mat-icon-button class="song-remove-btn" (click)="removeSong(i,j)" color="warn">
+                    <mat-icon>delete</mat-icon>
+                  </button>
                 </mat-form-field>
-                <button mat-icon-button class="song-remove-btn" (click)="removeSong(i,j)" color="warn">
-                  <mat-icon>delete</mat-icon>
-                </button>
-              </div>
+              </fieldset>
               <button mat-stroked-button (click)="addSong(i)" color="primary">
                 <mat-icon>add</mat-icon>
               </button>
-            </fieldset>
+            </div>
+            <!-- Songs Form Array End-------------------------------->
             <button mat-icon-button class="albums__remove" (click)="removeAlbum(i)" color="warn">
               <mat-icon>delete</mat-icon>
             </button>
-
           </fieldset>
+          <!-- Albums Form Array End -------------------------------->
           <button mat-stroked-button (click)="addAlbum()" color="primary">
             <mat-icon>add</mat-icon>
           </button>
@@ -44,6 +46,7 @@
       </mat-card>
     </form>
   </section>
+
 
   <section class="form-value">
     <mat-card>
