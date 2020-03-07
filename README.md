@@ -15,4 +15,5 @@ This is an interactive playground for learning Angular Form Arrays.
 1. Install the dependencies: `npm install`
 1. Run the application using the command: `npm run start`
 
-Follow
+Follow Me:
+[Blog](https://code.sreyaj.com) | [Twitter](https://twitter.com/AdiSreyaj) | [GitHub](https://github.com/adisreyaj)
